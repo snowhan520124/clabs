@@ -1,4 +1,23 @@
 {
-  "publications": [1, 2, 3],
-  "name": "han"
+  "publication_categories": [{
+      "name": "E-Textiles & Maker Culture",
+      "id": 1
+    },
+    {
+      "name": "Interest-Driven Learning",
+      "id": 2
+    },
+    {
+      "name": "Arts & Creativity",
+      "id": 3
+    }
+  ],
+  "publications": [{
+    "text": "Peppler. K. & Keune, A. (2019). “It helps create and enhance a community”: Youth motivations for making portfolios [Special Issue]. Mind, Culture, and Activity: Young People, Digital Mediation, and Transformative Agency.",
+    "link_text": "“It helps create and enhance a community”: Youth motivations for making portfolios [Special Issue].",
+    "year": 2019,
+    "cat": 2,
+    "file": "2019_Peppler_Keune_youth_motivations_for_making_portfolios.pdf"
+  }],
+  "team": []
 }
