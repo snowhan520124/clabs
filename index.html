@@ -1,62 +1,62 @@
 <!DOCTYPE html>
 <html>
 
-<head>
-  <title>Test</title>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <script src="jquery-3.4.1.min.js"></script>
-  <script src="vue.js"></script>
-  <style>
-    body {
-      background-color: #ccc;
-    }
+    <head>
+        <title>Test</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="jquery-3.4.1.min.js"></script>
+        <script src="vue.js"></script>
+        <style>
+            body {
+                background-color: #ccc;
+            }
 
-    .my-text {
-      font-size: 1em;
-      margin-bottom: 10px;
-      text-transform: uppercase;
-      font-weight: bold;
-      color: white;
-      text-shadow: 0 1px 2px rgba(black, .15);
-    }
+            .my-text {
+                font-size: 1em;
+                margin-bottom: 10px;
+                text-transform: uppercase;
+                font-weight: bold;
+                color: white;
+                text-shadow: 0 1px 2px rgba(black, .15);
+            }
 
-    li {
-      margin-bottom: 10px;
-    }
-  </style>
-</head>
+            li {
+                margin-bottom: 10px;
+            }
+        </style>
+    </head>
 
-<body>
-  <div id="app">
-    <p>Click <a href="https://raw.githubusercontent.com/hanaldo/clabs/master/lab_web_data.json" target="_blank">here</a> to see the pure JSON data.</p>
-    <p>And based on the above JSON data the following list will be populated automatically.</p>
-    <div>
-      <ul class="my-text">
-        <li v-for="pub in all.publications" v-html="pub.display"></li>
-      </ul>
-    </div>
-  </div>
-  <script>
-    $.getJSON({
-      url: "https://raw.githubusercontent.com/hanaldo/clabs/master/lab_web_data.json"
-    }).done(function(res) {
-      console.log(res);
-      res.publications.forEach(function(pub) {
-        if (pub.text.includes(pub.link_text)) {
-          var fileServerPath = "http://creativitylabs.com/pubs/";
-          var linkTag = "<a href=\"" + fileServerPath + pub.file + "\" target=\"_blank\">" + pub.link_text + "</a>"
-          pub.display = pub.text.replace(pub.link_text, linkTag);
-        }
-      });
-      new Vue({
-        el: "#app",
-        data: {
-          all: res
-        }
-      });
-    });
-  </script>
-</body>
+    <body>
+        <div id="app">
+            <p>Click <a href="https://raw.githubusercontent.com/hanaldo/clabs/master/lab_web_data.json" target="_blank">here</a> to see the pure JSON data.</p>
+            <p>And based on the above JSON data the following list will be populated automatically.</p>
+            <div>
+                <ul class="my-text">
+                    <li v-for="pub in all.publications" v-html="pub.display"></li>
+                </ul>
+            </div>
+        </div>
+        <script>
+            $.getJSON({
+                url: "https://raw.githubusercontent.com/hanaldo/clabs/master/lab_web_data.json"
+            }).done(function (res) {
+                console.log(res);
+                res.publications.forEach(function (pub) {
+                    if (pub.text.includes(pub.link_text)) {
+                        var fileServerPath = "http://creativitylabs.com/pubs/";
+                        var linkTag = "<a href=\"" + fileServerPath + pub.file + "\" target=\"_blank\">" + pub.link_text + "</a>"
+                        pub.display = pub.text.replace(pub.link_text, linkTag);
+                    }
+                });
+                new Vue({
+                    el: "#app",
+                    data: {
+                        all: res
+                    }
+                });
+            });
+        </script>
+    </body>
 
 </html>
