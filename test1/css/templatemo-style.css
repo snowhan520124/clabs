@@ -456,27 +456,27 @@ header {
 
 /* Featured Style */
 
-#featured {
+#pubs {
   padding-left: 60px;
   padding-right: 60px;
   padding-bottom: 80px;
   border-bottom: 1px solid #eee;
 }
 
-#featured .section-heading {
+#pubs .section-heading {
   margin-right: 20%;
 }
 
-#featured .content-section {
+#pubs .content-section {
   display: inline-block;
   position: relative;
 }
 
-#featured .owl-dots {
+#pubs .owl-dots {
   margin-top: 40px;
 }
 
-#featured .owl-dots .owl-dot span  {
+#pubs .owl-dots .owl-dot span  {
   width: 12px;
   height: 12px;
   background-color: #cdcdcd!important;
@@ -485,30 +485,30 @@ header {
   margin: 0 3px;
 }
 
-#featured .owl-dots .active span {
+#pubs .owl-dots .active span {
   background-color: #45489a!important;
 }
 
-#featured .owl-dots button {
+#pubs .owl-dots button {
   outline: none;
 }
 
-#featured .owl-nav {
+#pubs .owl-nav {
   position: absolute;
   display: inline-block;
   top: -110px;
   right: 0;
 }
 
-#featured .owl-nav button:focus {
+#pubs .owl-nav button:focus {
   outline: none;
 }
 
-#featured .owl-nav .owl-prev span {
+#pubs .owl-nav .owl-prev span {
   margin-right: 10px;
 }
 
-#featured .owl-nav .owl-next span, #featured .owl-nav .owl-prev span {
+#pubs .owl-nav .owl-next span, #pubs .owl-nav .owl-prev span {
   outline: none;
   width: 50px;
   height: 50px;
@@ -521,27 +521,27 @@ header {
   transition: all 0.5s;
 }
 
-#featured .owl-nav span:hover {
+#pubs .owl-nav span:hover {
   background-color: #45489a;
   color: #fff;
 }
 
-#featured .item {
+#pubs .item {
   text-align: left;
   position: relative;
   z-index: 10;
 }
 
-#featured .item .image {
+#pubs .item .image {
   position: relative;
 }
 
-#featured .item .image img {
+#pubs .item .image img {
   width: 100%;
   overflow: hidden;
 }
 
-#featured .item .image .featured-button a {
+#pubs .item .image .featured-button a {
   font-size: 13px;
   font-weight: 600;
   color: #fff;
@@ -561,19 +561,19 @@ header {
   opacity: 0;
 }
 
-#featured .item:hover .featured-button a {
+#pubs .item:hover .featured-button a {
   bottom: 0;
   opacity: 1;
 }
 
-#featured .item .text-content {
+#pubs .item .text-content {
   padding-top: 20px;
   background-color: #fff;
   position: relative;
   z-index: 10;
 }
 
-#featured .item .text-content h4 {
+#pubs .item .text-content h4 {
   margin-top: 0px;
   margin-bottom: 5px;
   font-size: 21px;
@@ -582,7 +582,7 @@ header {
   letter-spacing: 0.5px;
 }
 
-#featured .item .text-content span {
+#pubs .item .text-content span {
   display: inline-block;
   font-size: 15px;
   font-weight: 600;
@@ -595,54 +595,54 @@ header {
 
 /* Projects Style */
 
-#projects {
+#design {
   padding-left: 60px;
   padding-right: 60px;
   padding-bottom: 50px;
 }
 
-#projects .masonry {
+#design .masonry {
   position: relative;
   width: 100%;
 }
 
-#projects .masonry .item img {
+#design .masonry .item img {
   transition: all 1s;
   width: 100%;
   overflow: hidden;
   margin-bottom: 30px;
 }
 
-#projects .masonry .item img:hover {
+#design .masonry .item img:hover {
   opacity: 0.5;
 }
 
 
 
-/* Video Presentation Style */
+/* News Section Style */
 
-#video {
+#news {
   text-align: center;
   background-color: #f4f4f4;
   padding: 100px 60px;
 }
 
-#video .section-heading {
+#news .section-heading {
   margin-bottom: 30px;
   text-align: center;
 }
 
-#video .section-heading h1 {
+#news .section-heading h1 {
   display: block;
   margin: 0px;
 }
 
-#video .section-heading p {
+#news .section-heading p {
   position: relative;
   margin: 0px;
 }
 
-#video .accent-button {
+#news .accent-button {
   margin-top: 30px;
 }
 
@@ -721,15 +721,15 @@ header {
 
 
 
-/* Blog Style */
+/* Research Section Style */
 
-#blog {
+#research {
   padding-left: 60px;
   padding-right: 60px;
   padding-bottom: 80px;
 }
 
-#blog .tabs {
+#research .tabs {
   list-style: none;
   margin: 0px;
   padding: 0px;
@@ -739,7 +739,7 @@ header {
   border-bottom: 10px solid #45489a;
 }
 
-#blog .tabs li {
+#research .tabs li {
   display: inline-block;
   text-align: center;
   width: 25%;
@@ -748,7 +748,7 @@ header {
   padding: 0;
 }
 
-#blog .tabs a {
+#research .tabs a {
   display: block;
   text-align: center;
   text-decoration: none;
@@ -761,16 +761,16 @@ header {
   transition: 0.5s;
 }
 
-#blog .tabs a:hover {
+#research .tabs a:hover {
   color: #45489a;
 }
 
 
-#blog .tabs .active:hover {
+#research .tabs .active:hover {
   color: #fff;
 }
 
-#blog .tabs .active {
+#research .tabs .active {
   background-color: #45489a;
   color: #fff;
 }
@@ -786,13 +786,13 @@ header {
   clear:both;
 }
 
-#blog .tabgroup ul {
+#research .tabgroup ul {
   padding: 0;
   margin: 0;
   list-style: none;
 }
 
-#blog .tabgroup ul li {
+#research .tabgroup ul li {
   display: inline-block;
   text-align: left;
   margin-bottom: 10px;
@@ -800,23 +800,23 @@ header {
   border-bottom: 1px solid #ddd;
 }
 
-#blog .tabgroup ul li:last-child {
+#research .tabgroup ul li:last-child {
   border-bottom: none;
   margin-bottom: 0px;
   padding-bottom: 10px;
 }
 
-#blog .tabgroup ul li img {
+#research .tabgroup ul li img {
   float: left;
   margin-right: 30px;
   max-width: 100%;
   overflow: hidden;
 }
-#blog .tabgroup ul li .text-content {
+#research .tabgroup ul li .text-content {
   display: inline;
 }
 
-#blog .item .text-content h4 {
+#research .item .text-content h4 {
   padding-top: 7.5px;
   margin-top: 0px;
   margin-bottom: 5px;
@@ -826,7 +826,7 @@ header {
   letter-spacing: 0.5px;
 }
 
-#blog .item .text-content span {
+#research .item .text-content span {
   display: inline-block;
   font-size: 15px;
   font-weight: 600;
@@ -835,7 +835,7 @@ header {
   margin-bottom: 15px;
 }
 
-#blog .item .text-content .accent-button {
+#research .item .text-content .accent-button {
   margin-top: 25px;
 }
 
@@ -1028,43 +1028,43 @@ header {
     position: relative;
   }
 
-  #featured {
+  #pubs {
     padding-left: 15px;
     padding-right: 15px;
   }
 
-  #featured .owl-nav {
+  #pubs .owl-nav {
     position: absolute;
     display: inline-block;
     top: -220px;
     right: 0;
   }
 
-  #projects {
+  #design {
     padding-left: 15px;
     padding-right: 15px;
   }
 
-  #video {
+  #news {
     padding-left: 15px;
     padding-right: 15px;
   }
 
-  #blog {
+  #research {
     padding-left: 15px;
     padding-right: 15px;
   }
 
-  #blog .tabs a {
+  #research .tabs a {
     font-size: 13px;
   }
 
-  #blog .tabgroup ul li img {
+  #research .tabgroup ul li img {
     float: none;
     width: 100%;
     margin-bottom: 15px;
   }
-  #blog .tabgroup ul li .text-content {
+  #research .tabgroup ul li .text-content {
     display: block;
   }
 

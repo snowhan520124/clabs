@@ -12,4 +12,11 @@ $("#link_top").on('click', function (e) {
     $('html, body').animate({scrollTop: "0px"}, 500, 'linear');
 });
 
+new Vue({
+    el: "#app",
+    data: {
+        message: "hi"
+    }
+});
+
 
