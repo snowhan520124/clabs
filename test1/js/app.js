@@ -7,4 +7,9 @@ $("#test_b1").click(function () {
     console.log("css");
 });
 
+$("#link_top").on('click', function (e) {
+    e.preventDefault();
+    $('html, body').animate({scrollTop: "0px"}, 500, 'linear');
+});
+
 
