@@ -191,14 +191,14 @@ header {
   height: 140px;
   line-height: 100px;
   background-color: #d459f6;
-  padding: 20px;
+  padding: 15px;
   text-align: center;
 }
 
 .sidebar-navigation .logo a {
   text-decoration: none;
   color: #fff;
-  font-size: 24px;
+  font-size: 28px;
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.5px;
