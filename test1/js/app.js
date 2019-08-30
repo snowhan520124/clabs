@@ -1,5 +1,5 @@
 jQuery(document).ready(function ($) {
-    'use strict';
+    "use strict";
 
     $(".Modern-Slider").slick({
         autoplay: true,
@@ -10,18 +10,11 @@ jQuery(document).ready(function ($) {
         dots: true,
         fade: true,
         pauseOnDotsHover: true,
-        cssEase: 'linear',
-        // fade:true,
+        cssEase: "linear",
         draggable: false,
         prevArrow: '<button class="PrevArrow"></button>',
-        nextArrow: '<button class="NextArrow"></button>',
+        nextArrow: '<button class="NextArrow"></button>'
     });
-
-    $('#nav-toggle').on('click', function (event) {
-        event.preventDefault();
-        $('#main-nav').toggleClass("open");
-    });
-
 
     $('.tabgroup > div').hide();
     $('.tabgroup > div:first-of-type').show();
