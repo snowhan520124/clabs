@@ -80,7 +80,6 @@ var app;
 $.getJSON({
     url: "../lab_web_data.json"
 }).done(function (res) {
-    console.log(res);
     var fileServerPath = "http://creativitylabs.com/pubs/";
 
     res.publications.forEach(function (yearGroup, index, array) {
