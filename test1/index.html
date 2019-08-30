@@ -16,7 +16,7 @@
         <link rel="stylesheet" href="css/my.css">
         <script src="js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
         <script src="js/jquery-3.4.1.min.js"></script>
-        <script src="js/vue.min.js"></script>
+        <script src="js/vue.js"></script>
     </head>
 
     <body>
@@ -42,7 +42,7 @@
             </div>
         </header>
 
-        <div class="sidebar-navigation hidde-sm hidden-xs" id="app">
+        <div class="sidebar-navigation hidde-sm hidden-xs">
             <div class="logo">
                 <a href="#" id="link_top">Creativity<em>Labs</em></a>
             </div>
@@ -94,7 +94,7 @@
                         <a href="#contact">
                             <span class="rect"></span>
                             <span class="circle"></span>
-                            {{message}}
+                            Contact Us
                         </a>
                     </li>
                 </ul>
@@ -119,7 +119,7 @@
                                 <p class="slider-image-text">Sentra is free Bootstrap CSS Template by templatemo website.<br>
                                     Please share our site link to your friends.</p>
                                 <div class="white-button button">
-                                    <a href="#blog" id="test_b1">Discover More</a>
+                                    <a id="goTopProject1" href="#research">Craft More</a>
                                 </div>
                             </div>
                         </div>
@@ -130,12 +130,12 @@
                         <div class="image"></div>
                         <div class="info">
                             <div>
-                                <h1 class="slider-image-text">Future of Work</h1>
+                                <h1 class="slider-image-text">BioSim</h1>
                                 <p class="slider-image-text">Support templatemo by sharing a link to your friends.
                                     <br>Thank you for helping us.</p>
 
                                 <div class="white-button button">
-                                    <a href="#featured">Share More</a>
+                                    <a id="goTopProject2" href="#research">Play More</a>
                                 </div>
                             </div>
                         </div>
@@ -159,7 +159,7 @@
             </div>
         </div>
 
-        <div class="page-content">
+        <div class="page-content" id="app">
             <section id="research" class="content-section">
                 <div class="section-heading">
                     <h1>Research<br><em>Portfolios</em></h1>
@@ -169,10 +169,10 @@
                     <div class="tabs-content">
                         <div class="wrapper">
                             <ul class="tabs clearfix" data-tabgroup="first-tab-group">
-                                <li><a href="#tab1" class="active">Research Strand 1</a></li>
-                                <li><a href="#tab2">Research Strand 2</a></li>
-                                <li><a href="#tab3">Research Strand 3</a></li>
-                                <li><a href="#tab4">Research Strand 4</a></li>
+                                <li><a href="#tab1" class="active" id="tabMenuButton1">Research Strand 1</a></li>
+                                <li><a href="#tab2" id="tabMenuButton2">Research Strand 2</a></li>
+                                <li><a href="#tab3" id="tabMenuButton3">Research Strand 3</a></li>
+                                <li><a href="#tab4" id="tabMenuButton4">Research Strand 4</a></li>
                             </ul>
                             <section id="first-tab-group" class="tabgroup">
                                 <div id="tab1">
@@ -191,26 +191,12 @@
                                                 </div>
                                             </div>
                                         </li>
-                                        <li>
+                                        <li v-if="!showOneProject[0]">
                                             <div class="item">
                                                 <img src="img/project_icon_scratch.png" alt="">
                                                 <div class="text-content">
                                                     <h4>Cras commodo odio ut</h4>
-                                                    <span>16 July 2018</span>
-                                                    <p>Nam vel egestas nisi. Nullam lobortis magna at enim venenatis luctus. Nam finibus, mauris eu dictum iaculis, dolor tortor cursus quam, in volutpat augue lectus sed magna. Integer mollis lorem quis ipsum maximus finibus.</p>
-
-                                                    <div class="accent-button button">
-                                                        <a href="#contact">Continue Reading</a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </li>
-                                        <li>
-                                            <div class="item">
-                                                <img src="img/blog_3.jpg" alt="">
-                                                <div class="text-content">
-                                                    <h4>Sed at massa turpis</h4>
-                                                    <span>10 July 2018</span>
+                                                    <span>16 July 2018 {{showOneProject[0]}}</span>
                                                     <p>Nam vel egestas nisi. Nullam lobortis magna at enim venenatis luctus. Nam finibus, mauris eu dictum iaculis, dolor tortor cursus quam, in volutpat augue lectus sed magna. Integer mollis lorem quis ipsum maximus finibus.</p>
 
                                                     <div class="accent-button button">
@@ -289,7 +275,7 @@
                                     <ul>
                                         <li>
                                             <div class="item">
-                                                <img src="img/blog_1.jpg" alt="">
+                                                <img src="img/project_icon_biosim.png" alt="">
                                                 <div class="text-content">
                                                     <h4>Lorem ipsum dolor sit</h4>
                                                     <span>26 April 2018</span>
@@ -301,7 +287,7 @@
                                                 </div>
                                             </div>
                                         </li>
-                                        <li>
+                                        <li v-if="!showOneProject[3]">
                                             <div class="item">
                                                 <img src="img/blog_3.jpg" alt="">
                                                 <div class="text-content">
@@ -315,7 +301,7 @@
                                                 </div>
                                             </div>
                                         </li>
-                                        <li>
+                                        <li v-if="!showOneProject[3]">
                                             <div class="item">
                                                 <img src="img/blog_2.jpg" alt="">
                                                 <div class="text-content">
