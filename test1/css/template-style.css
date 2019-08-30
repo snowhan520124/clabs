@@ -904,7 +904,6 @@ header {
 .desk, .desk h4, .team-hover .s-link a {
     text-align: center;
     color: #222;
-    line-height: 10px !important;
 }
 .team-member .s-link a {
     margin: 0 10px;

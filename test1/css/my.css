@@ -5,3 +5,8 @@
 .slider-image-text {
     text-shadow: -1px 0 #481e52, 0 1px #481e52, 1px 0 #481e52, 0 -1px #481e52;
 }
+
+.team-intro-text {
+    line-height: 15px !important;
+    font-size: 10px !important;
+}
