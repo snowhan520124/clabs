@@ -78,7 +78,7 @@ jQuery(document).ready(function ($) {
 
 var app;
 $.getJSON({
-    url: "../lab_web_data.json"
+    url: "lab_web_data.json"
 }).done(function (res) {
     var fileServerPath = "http://creativitylabs.com/pubs/";
 
