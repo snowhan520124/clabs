@@ -1,29 +1,57 @@
 {
-  "publication_categories": [{
-      "name": "E-Textiles & Maker Culture",
-      "id": 1
-    },
-    {
-      "name": "Interest-Driven Learning",
-      "id": 2
-    },
-    {
-      "name": "Arts & Creativity",
-      "id": 3
-    }
-  ],
-  "publications": [{
-    "text": "Peppler. K. & Keune, A. (2019). “It helps create and enhance a community”: Youth motivations for making portfolios [Special Issue]. Mind, Culture, and Activity: Young People, Digital Mediation, and Transformative Agency.",
-    "link_text": "“It helps create and enhance a community”: Youth motivations for making portfolios [Special Issue].",
-    "year": 2019,
-    "cat": 2,
-    "file": "2019_Peppler_Keune_youth_motivations_for_making_portfolios.pdf"
-  }, {
-    "text": " Phonethibsavads, A., Peppler, K., & Bender, S. (2019). Utilizing the consensual assessment technique to compare creativity in drama spaces. Creativity: Theories-Research-Applications, Vol. 6, Issue 1, 2019.",
-    "link_text": "Utilizing the consensual assessment technique to compare creativity in drama spaces",
-    "year": 2019,
-    "cat": 2,
-    "file": "2019_Phonethibsavads_Peppler_Bender_Utilizing_the_consensual_assessment_technique.pdf"
-  }],
-  "team": []
+    "publication_categories": [
+        {
+            "name": "E-Textiles & Maker Culture",
+            "id": "etx"
+        },
+        {
+            "name": "Interest-Driven Learning",
+            "id": "idl"
+        },
+        {
+            "name": "Arts & Creativity",
+            "id": "anc"
+        }, {
+            "name": "Scratch & Computational Media",
+            "id": "scm"
+        }
+    ],
+    "publications": [
+        {
+            "year": 2019,
+            "list": [
+                {
+                    "title": "Studying computational thinking through collaborative design activities with Scratch",
+                    "authors": ["Huang, J.", "Peppler, K."],
+                    "otherText": "Poster to be presented at the 13th International Conference on Computer Supported Collaborative Learning (CSCL), June 2019. Lyon, France: International Society of the Learning Sciences.",
+                    "cat": "scm"
+                }, 
+                {
+                    "title": "Utilizing the consensual assessment technique to compare creativity in drama spaces",
+                    "authors": ["Phonethibsavads, A.", "Peppler, K.", "Bender, S."],
+                    "otherText": "Creativity: Theories-Research-Applications, Vol. 6, Issue 1, 2019.",
+                    "cat": "anc",
+                    "file": "2019_Phonethibsavads_Peppler_Bender_Utilizing_the_consensual_assessment_technique.pdf"
+                }
+            ]
+        },
+        {
+            "year": 2018,
+            "list": [
+                {
+                    "title": "Connected cosplay: Fan work as pathways toward opportunity",
+                    "authors": ["Bender, S.", "Peppler, K."],
+                    "otherText": "In J. Kay & R. Luckin (Eds.), Rethinking learning in the digital age: Making the Learning Sciences count: The International Conference of the Learning Sciences (ICLS) 2018 (Vol. 3, pg. 1605-1606). London, UK: International Society of the Learning Sciences. ISBN: 978-1-7324672-2-4",
+                    "cat": "idl",
+                    "file": "2018icls_Cosplay-benderpeppler.pdf"
+                }
+            ]
+        },
+        {
+            "year": 2017,
+            "list": [
+            ]
+        }
+    ],
+    "team": []
 }

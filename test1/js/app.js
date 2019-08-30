@@ -38,28 +38,6 @@ jQuery(document).ready(function ($) {
         $(this).addClass('open');
     });
 
-    $('.owl-carousel').owlCarousel({
-        loop: true,
-        margin: 30,
-        responsiveClass: true,
-        responsive: {
-            0: {
-                items: 1,
-                nav: true
-            },
-            600: {
-                items: 2,
-                nav: false
-            },
-            1000: {
-                items: 3,
-                nav: true,
-                loop: false
-            }
-        }
-    });
-
-
 
     var contentSection = $('.content-section, .main-banner');
     var navigation = $('nav');
@@ -98,25 +76,46 @@ jQuery(document).ready(function ($) {
     }
 });
 
-var app = new Vue({
-    el: "#app",
-    data: {
-        showOneProject: [false, false, false, false]
-    },
-    methods: {
-        doShowOneProject(index) {
-            var self = this;
-            if (index < 0) {
-                this.showOneProject.forEach(function (item, index) {
-                    Vue.set(self.showOneProject, index, false);
-                });
-                console.log("showAll");
-            } else {
-                Vue.set(self.showOneProject, index, true);
-            }
-            console.log("show " + index);
+var app;
+$.getJSON({
+    url: "../lab_web_data.json"
+}).done(function (res) {
+    console.log(res);
+    var fileServerPath = "http://creativitylabs.com/pubs/";
+
+    res.publications.forEach(function (yearGroup, index, array) {
+        if (!yearGroup.list.length) {
+            array.splice(index, 1);
+            return;
         }
-    }
+        yearGroup.list.forEach(function (pub) {
+            if (pub.file) {
+                pub.file = fileServerPath + pub.file;
+            }
+        });
+    });
+
+    app = new Vue({
+        el: "#app",
+        data: {
+            showOneProject: [false, false, false, false],
+            publications: res.publications
+        },
+        methods: {
+            doShowOneProject(index) {
+                var self = this;
+                if (index < 0) {
+                    this.showOneProject.forEach(function (item, index) {
+                        Vue.set(self.showOneProject, index, false);
+                    });
+                    console.log("showAll");
+                } else {
+                    Vue.set(self.showOneProject, index, true);
+                }
+                console.log("show " + index);
+            }
+        }
+    });
 });
 
 $("#goTopProject1").click(function () {
