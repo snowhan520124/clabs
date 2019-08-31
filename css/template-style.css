@@ -110,6 +110,8 @@ p {
     letter-spacing: 0.25px;
     text-decoration: none;
     transition: all 0.3s;
+    border: none;
+    outline:none;
 }
 
 .my-button:hover {
