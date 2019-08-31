@@ -24,7 +24,8 @@ jQuery(document).ready(function ($) {
             el: ".swiper-pagination",
             dynamicBullets: true
         },
-        preventClicksPropagation: false
+        preventClicksPropagation: false,
+        preventClicks: false
     });
 
     $(".button-next-news").click(function () {
