@@ -172,160 +172,156 @@
                     <p>We design and research new technologies to promote creative learning in youth communities.</p>
                 </div>
                 <div class="section-content">
-                    <div class="tabs-content">
-                        <div class="wrapper">
-                            <ul class="tabs clearfix" data-tabgroup="first-tab-group">
-                                <li><a href="#tab1" class="active" id="tabMenuButton1">Research Strand 1</a></li>
-                                <li><a href="#tab2" id="tabMenuButton2">Research Strand 2</a></li>
-                                <li><a href="#tab3" id="tabMenuButton3">Research Strand 3</a></li>
-                                <li><a href="#tab4" id="tabMenuButton4">Research Strand 4</a></li>
+                    <ul class="tabs clearfix">
+                        <li><a v-bind:class="{ active: researchTabs[0] }" v-on:click="clickResearchTab(0, false)">Research Strand 1</a></li>
+                        <li><a v-bind:class="{ active: researchTabs[1] }" v-on:click="clickResearchTab(1, false)">Research Strand 2</a></li>
+                        <li><a v-bind:class="{ active: researchTabs[2] }" v-on:click="clickResearchTab(2, false)">Research Strand 3</a></li>
+                        <li><a v-bind:class="{ active: researchTabs[3] }" v-on:click="clickResearchTab(3, false)">Research Strand 4</a></li>
+                    </ul>
+                    <section class="tabgroup">
+                        <div v-if="researchTabs[0]">
+                            <ul>
+                                <li>
+                                    <div class="item">
+                                        <img src="img/project_icon_rcm.png" alt="">
+                                        <div class="text-content">
+                                            <h4>Re-Crafting Mathematics Education</h4>
+                                            <span><a href="https://sites.uci.edu/rcmath/" target="_blank">sites.uci.edu/rcmath</a></span>
+                                            <p>This collaborative project, titled "Re-Crafting Mathematics Education: Designing Tangible Manipulatives Rooted in Traditional Female Crafts," is based on our prior work studying design, mathematics, and traditional female crafts, particularly when integrated with electronics in what we call "e-textiles."...</p>
+
+                                            <div class="accent-button button">
+                                                <a href="#contact">Continue Reading</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li v-if="!showOneProject[0]">
+                                    <div class="item">
+                                        <img src="img/project_icon_scratch.png" alt="">
+                                        <div class="text-content">
+                                            <h4>Cras commodo odio ut</h4>
+                                            <span>16 July 2018 {{showOneProject[0]}}</span>
+                                            <p>Nam vel egestas nisi. Nullam lobortis magna at enim venenatis luctus. Nam finibus, mauris eu dictum iaculis, dolor tortor cursus quam, in volutpat augue lectus sed magna. Integer mollis lorem quis ipsum maximus finibus.</p>
+
+                                            <div class="accent-button button">
+                                                <a href="#contact">Continue Reading</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
                             </ul>
-                            <section id="first-tab-group" class="tabgroup">
-                                <div id="tab1">
-                                    <ul>
-                                        <li>
-                                            <div class="item">
-                                                <img src="img/project_icon_rcm.png" alt="">
-                                                <div class="text-content">
-                                                    <h4>Re-Crafting Mathematics Education</h4>
-                                                    <span><a href="https://sites.uci.edu/rcmath/" target="_blank">sites.uci.edu/rcmath</a></span>
-                                                    <p>This collaborative project, titled "Re-Crafting Mathematics Education: Designing Tangible Manipulatives Rooted in Traditional Female Crafts," is based on our prior work studying design, mathematics, and traditional female crafts, particularly when integrated with electronics in what we call "e-textiles."...</p>
-
-                                                    <div class="accent-button button">
-                                                        <a href="#contact">Continue Reading</a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </li>
-                                        <li v-if="!showOneProject[0]">
-                                            <div class="item">
-                                                <img src="img/project_icon_scratch.png" alt="">
-                                                <div class="text-content">
-                                                    <h4>Cras commodo odio ut</h4>
-                                                    <span>16 July 2018 {{showOneProject[0]}}</span>
-                                                    <p>Nam vel egestas nisi. Nullam lobortis magna at enim venenatis luctus. Nam finibus, mauris eu dictum iaculis, dolor tortor cursus quam, in volutpat augue lectus sed magna. Integer mollis lorem quis ipsum maximus finibus.</p>
-
-                                                    <div class="accent-button button">
-                                                        <a href="#contact">Continue Reading</a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </li>
-                                    </ul>
-                                </div>
-                                <div id="tab2">
-                                    <ul>
-                                        <li>
-                                            <div class="item">
-                                                <img src="img/blog_3.jpg" alt="">
-                                                <div class="text-content">
-                                                    <h4>Sed at massa turpis</h4>
-                                                    <span>30 June 2018</span>
-                                                    <p>Nam vel egestas nisi. Nullam lobortis magna at enim venenatis luctus. Nam finibus, mauris eu dictum iaculis, dolor tortor cursus quam, in volutpat augue lectus sed magna. Integer mollis lorem quis ipsum maximus finibus.</p>
-
-                                                    <div class="accent-button button">
-                                                        <a href="#contact">Continue Reading</a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </li>
-                                    </ul>
-                                </div>
-                                <div id="tab3">
-                                    <ul>
-                                        <li>
-                                            <div class="item">
-                                                <img src="img/blog_2.jpg" alt="">
-                                                <div class="text-content">
-                                                    <h4>Cras commodo odio ut</h4>
-                                                    <span>26 May 2018</span>
-                                                    <p>Nam vel egestas nisi. Nullam lobortis magna at enim venenatis luctus. Nam finibus, mauris eu dictum iaculis, dolor tortor cursus quam, in volutpat augue lectus sed magna. Integer mollis lorem quis ipsum maximus finibus.</p>
-
-                                                    <div class="accent-button button">
-                                                        <a href="#contact">Continue Reading</a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </li>
-                                        <li>
-                                            <div class="item">
-                                                <img src="img/blog_1.jpg" alt="">
-                                                <div class="text-content">
-                                                    <h4>Lorem ipsum dolor sit</h4>
-                                                    <span>22 May 2018</span>
-                                                    <p>Nam vel egestas nisi. Nullam lobortis magna at enim venenatis luctus. Nam finibus, mauris eu dictum iaculis, dolor tortor cursus quam, in volutpat augue lectus sed magna. Integer mollis lorem quis ipsum maximus finibus.</p>
-
-                                                    <div class="accent-button button">
-                                                        <a href="#contact">Continue Reading</a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </li>
-                                        <li>
-                                            <div class="item">
-                                                <img src="img/blog_3.jpg" alt="">
-                                                <div class="text-content">
-                                                    <h4>Integer ultrices augue</h4>
-                                                    <span>8 May 2018</span>
-                                                    <p>Nam vel egestas nisi. Nullam lobortis magna at enim venenatis luctus. Nam finibus, mauris eu dictum iaculis, dolor tortor cursus quam, in volutpat augue lectus sed magna. Integer mollis lorem quis ipsum maximus finibus.</p>
-
-                                                    <div class="accent-button button">
-                                                        <a href="#contact">Continue Reading</a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </li>
-                                    </ul>
-                                </div>
-                                <div id="tab4">
-                                    <ul>
-                                        <li>
-                                            <div class="item">
-                                                <img src="img/project_icon_biosim.png" alt="">
-                                                <div class="text-content">
-                                                    <h4>BioSim</h4>
-                                                    <span>26 April 2018</span>
-                                                    <p>Nam vel egestas nisi. Nullam lobortis magna at enim venenatis luctus. Nam finibus, mauris eu dictum iaculis, dolor tortor cursus quam, in volutpat augue lectus sed magna. Integer mollis lorem quis ipsum maximus finibus.</p>
-
-                                                    <div class="accent-button button">
-                                                        <a href="#contact">Continue Reading</a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </li>
-                                        <li v-if="!showOneProject[3]">
-                                            <div class="item">
-                                                <img src="img/blog_3.jpg" alt="">
-                                                <div class="text-content">
-                                                    <h4>Integer ultrices augue eu</h4>
-                                                    <span>24 April 2018</span>
-                                                    <p>Nam vel egestas nisi. Nullam lobortis magna at enim venenatis luctus. Nam finibus, mauris eu dictum iaculis, dolor tortor cursus quam, in volutpat augue lectus sed magna. Integer mollis lorem quis ipsum maximus finibus.</p>
-
-                                                    <div class="accent-button button">
-                                                        <a href="#contact">Continue Reading</a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </li>
-                                        <li v-if="!showOneProject[3]">
-                                            <div class="item">
-                                                <img src="img/blog_2.jpg" alt="">
-                                                <div class="text-content">
-                                                    <h4>Cras commodo odio ut</h4>
-                                                    <span>20 April 2018</span>
-                                                    <p>Nam vel egestas nisi. Nullam lobortis magna at enim venenatis luctus. Nam finibus, mauris eu dictum iaculis, dolor tortor cursus quam, in volutpat augue lectus sed magna. Integer mollis lorem quis ipsum maximus finibus.</p>
-
-                                                    <div class="accent-button button">
-                                                        <a href="#contact">Continue Reading</a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </section>
                         </div>
-                    </div>
+                        <div v-if="researchTabs[1]">
+                            <ul>
+                                <li>
+                                    <div class="item">
+                                        <img src="img/blog_3.jpg" alt="">
+                                        <div class="text-content">
+                                            <h4>Sed at massa turpis</h4>
+                                            <span>30 June 2018</span>
+                                            <p>Nam vel egestas nisi. Nullam lobortis magna at enim venenatis luctus. Nam finibus, mauris eu dictum iaculis, dolor tortor cursus quam, in volutpat augue lectus sed magna. Integer mollis lorem quis ipsum maximus finibus.</p>
+
+                                            <div class="accent-button button">
+                                                <a href="#contact">Continue Reading</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                        <div v-if="researchTabs[2]">
+                            <ul>
+                                <li>
+                                    <div class="item">
+                                        <img src="img/blog_2.jpg" alt="">
+                                        <div class="text-content">
+                                            <h4>Cras commodo odio ut</h4>
+                                            <span>26 May 2018</span>
+                                            <p>Nam vel egestas nisi. Nullam lobortis magna at enim venenatis luctus. Nam finibus, mauris eu dictum iaculis, dolor tortor cursus quam, in volutpat augue lectus sed magna. Integer mollis lorem quis ipsum maximus finibus.</p>
+
+                                            <div class="accent-button button">
+                                                <a href="#contact">Continue Reading</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="item">
+                                        <img src="img/blog_1.jpg" alt="">
+                                        <div class="text-content">
+                                            <h4>Lorem ipsum dolor sit</h4>
+                                            <span>22 May 2018</span>
+                                            <p>Nam vel egestas nisi. Nullam lobortis magna at enim venenatis luctus. Nam finibus, mauris eu dictum iaculis, dolor tortor cursus quam, in volutpat augue lectus sed magna. Integer mollis lorem quis ipsum maximus finibus.</p>
+
+                                            <div class="accent-button button">
+                                                <a href="#contact">Continue Reading</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="item">
+                                        <img src="img/blog_3.jpg" alt="">
+                                        <div class="text-content">
+                                            <h4>Integer ultrices augue</h4>
+                                            <span>8 May 2018</span>
+                                            <p>Nam vel egestas nisi. Nullam lobortis magna at enim venenatis luctus. Nam finibus, mauris eu dictum iaculis, dolor tortor cursus quam, in volutpat augue lectus sed magna. Integer mollis lorem quis ipsum maximus finibus.</p>
+
+                                            <div class="accent-button button">
+                                                <a href="#contact">Continue Reading</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                        <div v-if="researchTabs[3]">
+                            <ul>
+                                <li>
+                                    <div class="item">
+                                        <img src="img/project_icon_biosim.png" alt="">
+                                        <div class="text-content">
+                                            <h4>BioSim</h4>
+                                            <span>26 April 2018</span>
+                                            <p>Nam vel egestas nisi. Nullam lobortis magna at enim venenatis luctus. Nam finibus, mauris eu dictum iaculis, dolor tortor cursus quam, in volutpat augue lectus sed magna. Integer mollis lorem quis ipsum maximus finibus.</p>
+
+                                            <div class="accent-button button">
+                                                <a href="#contact">Continue Reading</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li v-if="!showOneProject[3]">
+                                    <div class="item">
+                                        <img src="img/blog_3.jpg" alt="">
+                                        <div class="text-content">
+                                            <h4>Integer ultrices augue eu</h4>
+                                            <span>24 April 2018</span>
+                                            <p>Nam vel egestas nisi. Nullam lobortis magna at enim venenatis luctus. Nam finibus, mauris eu dictum iaculis, dolor tortor cursus quam, in volutpat augue lectus sed magna. Integer mollis lorem quis ipsum maximus finibus.</p>
+
+                                            <div class="accent-button button">
+                                                <a href="#contact">Continue Reading</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li v-if="!showOneProject[3]">
+                                    <div class="item">
+                                        <img src="img/blog_2.jpg" alt="">
+                                        <div class="text-content">
+                                            <h4>Cras commodo odio ut</h4>
+                                            <span>20 April 2018</span>
+                                            <p>Nam vel egestas nisi. Nullam lobortis magna at enim venenatis luctus. Nam finibus, mauris eu dictum iaculis, dolor tortor cursus quam, in volutpat augue lectus sed magna. Integer mollis lorem quis ipsum maximus finibus.</p>
+
+                                            <div class="accent-button button">
+                                                <a href="#contact">Continue Reading</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </section>
                 </div>
             </section>
 

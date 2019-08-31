@@ -608,6 +608,7 @@ header {
 
 #research .tabs a:hover {
     color: #45489a;
+    cursor: pointer;
 }
 
 

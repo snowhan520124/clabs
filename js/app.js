@@ -1,4 +1,5 @@
 var newsSwiper;
+var app;
 
 jQuery(document).ready(function ($) {
     "use strict";
@@ -18,36 +19,6 @@ jQuery(document).ready(function ($) {
         nextArrow: '<button class="NextArrow"></button>'
     });
 
-    setTimeout(function () {
-        newsSwiper = new Swiper(".swiper-container", {
-            spaceBetween: 150,
-            pagination: {
-                el: ".swiper-pagination",
-                dynamicBullets: true
-            },
-            preventClicksPropagation: false,
-            preventClicks: false,
-            noSwiping: true
-        });
-        console.log("news ready!");
-    }, 1500);
-
-
-    $('.tabgroup > div').hide();
-    $('.tabgroup > div:first-of-type').show();
-    $('.tabs a').click(function (e) {
-        e.preventDefault();
-        var $this = $(this),
-                tabgroup = '#' + $this.parents('.tabs').data('tabgroup'),
-                others = $this.closest('li').siblings().children('a'),
-                target = $this.attr('href');
-        others.removeClass('active');
-        $this.addClass('active');
-        $(tabgroup).children('div').hide();
-        $(target).show();
-
-    });
-
     var contentSection = $('.content-section, .main-banner');
     var navigation = $('nav');
 
@@ -55,6 +26,7 @@ jQuery(document).ready(function ($) {
     navigation.on('click', 'a', function (event) {
         event.preventDefault(); //prevents previous event
         smoothScroll($(this.hash));
+        console.log($(this.hash));
     });
 
     //update navigation on scroll...
@@ -72,7 +44,7 @@ jQuery(document).ready(function ($) {
                     ($(this).offset().top + $(this).height() - $(window).height() / 2 > $(window).scrollTop()))
             {
                 navigationMatch.addClass('active-section');
-                console.log("sectionName " + sectionName);
+                //console.log("sectionName " + sectionName);
             } else {
                 navigationMatch.removeClass('active-section');
             }
@@ -83,97 +55,90 @@ jQuery(document).ready(function ($) {
             scrollTop: target.offset().top
         }, 800);
     }
+
+    initVue();
 });
 
-var app;
-$.getJSON({
-    url: "https://raw.githubusercontent.com/hanaldo/clabs/master/lab_web_data.json"
-}).done(function (res) {
-    var fileServerPath = "http://creativitylabs.com/pubs/";
+function initVue() {
+    $.getJSON({
+        url: "https://raw.githubusercontent.com/hanaldo/clabs/master/lab_web_data.json"
+    }).done(function (res) {
+        var fileServerPath = "http://creativitylabs.com/pubs/";
 
-    res.publications.forEach(function (yearGroup, index, array) {
-        if (!yearGroup.list.length) {
-            array.splice(index, 1);
-            return;
-        }
-        yearGroup.list.forEach(function (pub) {
-            if (pub.file) {
-                pub.file = fileServerPath + pub.file;
+        res.publications.forEach(function (yearGroup, index, array) {
+            if (!yearGroup.list.length) {
+                array.splice(index, 1);
+                return;
+            }
+            yearGroup.list.forEach(function (pub) {
+                if (pub.file) {
+                    pub.file = fileServerPath + pub.file;
+                }
+            });
+        });
+
+        app = new Vue({
+            el: "#app",
+            data: {
+                showOneProject: [false, false, false, false],
+                researchTabs: [true, false, false, false],
+                publications: res.publications
+            },
+            methods: {
+                clickResearchTab(i, showOne) {
+                    var self = this;
+                    Vue.set(self.showOneProject, i, showOne);
+                    self.researchTabs.forEach(function (item, index, array) {
+                        if (index === i) {
+                            Vue.set(array, index, true);
+                        } else {
+                            Vue.set(array, index, false);
+                        }
+                    });
+                },
+                nextNews() {
+                    if (!newsSwiper) {
+                        return;
+                    }
+                    newsSwiper.slideNext();
+                    var videos = document.getElementsByClassName("news-videos");
+                    for (var i = 0; i < videos.length; i++) {
+                        videos[i].pause();
+                    }
+                }
             }
         });
-    });
+        console.log("vue ready!");
 
-    app = new Vue({
-        el: "#app",
-        data: {
-            showOneProject: [false, false, false, false],
-            publications: res.publications
-        },
-        methods: {
-            doShowOneProject(index) {
-                var self = this;
-                if (index < 0) {
-                    this.showOneProject.forEach(function (item, index) {
-                        Vue.set(self.showOneProject, index, false);
-                    });
-                    console.log("showAll");
-                } else {
-                    Vue.set(self.showOneProject, index, true);
-                }
-                console.log("show " + index);
+        newsSwiper = new Swiper(".swiper-container", {
+            spaceBetween: 150,
+            pagination: {
+                el: ".swiper-pagination",
+                dynamicBullets: true
             },
-            nextNews() {
-                if (!newsSwiper) {
-                    return;
-                }
-                newsSwiper.slideNext();
-                var videos = document.getElementsByClassName("news-videos");
-                for (var i = 0; i < videos.length; i++) {
-                    videos[i].pause();
-                }
-            }
-        }
+            preventClicksPropagation: false,
+            preventClicks: false,
+            noSwiping: true
+        });
+        console.log("news ready!");
+
+        initJsControls();
+        console.log("js controls ready!");
     });
-});
+}
 
-$("#goTopProject1").click(function () {
-    $("#tabMenuButton1").removeClass("active");
-    $("#tabMenuButton2").removeClass("active");
-    $("#tabMenuButton3").removeClass("active");
-    $("#tabMenuButton4").removeClass("active");
-    $("#tab2").css("display", "none");
-    $("#tab3").css("display", "none");
-    $("#tab4").css("display", "none");
-    $("#tab1").css("display", "block");
-    app.doShowOneProject(0);
-});
+function initJsControls() {
+    $("#goTopProject1").click(function () {
+        app.clickResearchTab(0, true);
+    });
 
-$("#goTopProject2").click(function () {
-    $("#tabMenuButton1").removeClass("active");
-    $("#tabMenuButton2").removeClass("active");
-    $("#tabMenuButton3").removeClass("active");
-    $("#tabMenuButton4").removeClass("active");
-    $("#tab1").css("display", "none");
-    $("#tab2").css("display", "none");
-    $("#tab3").css("display", "none");
-    $("#tab4").css("display", "block");
-    app.doShowOneProject(3);
-});
+    $("#goTopProject2").click(function () {
+        app.clickResearchTab(3, true);
+    });
 
-$("#tabMenuButton1").click(function () {
-    app.doShowOneProject(-1);
-});
-$("#tabMenuButton2").click(function () {
-    app.doShowOneProject(-1);
-});
-$("#tabMenuButton3").click(function () {
-    app.doShowOneProject(-1);
-});
-$("#tabMenuButton4").click(function () {
-    app.doShowOneProject(-1);
-});
+    $("#link_top").on("click", function (e) {
+        e.preventDefault();
+        $("html, body").animate({scrollTop: "0px"}, 500, "linear");
+    });
+}
 
-$("#link_top").on("click", function (e) {
-    e.preventDefault();
-    $("html, body").animate({scrollTop: "0px"}, 500, "linear");
-});
