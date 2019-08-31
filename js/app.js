@@ -46,17 +46,19 @@ jQuery(document).ready(function ($) {
     updateNavigation();
 
     function updateNavigation() {
-        console.log(".");
+        var viewTop = $(window).scrollTop();
+        var windowHeight = $(window).height();
+
         contentSection.each(function () {
-            var sectionName = $(this).attr('id');
+            var sectionName = $(this).attr("id");
             var navigationMatch = $('nav a[href="#' + sectionName + '"]');
-            if (($(this).offset().top - $(window).height() / 2 < $(window).scrollTop()) &&
-                    ($(this).offset().top + $(this).height() - $(window).height() / 2 > $(window).scrollTop()))
-            {
-                navigationMatch.addClass('active-section');
-                console.log("arrive " + sectionName);
+            var sectionTop = $("#" + sectionName).offset().top;
+            var sectionHeight = $("#" + sectionName).height();
+
+            if ((sectionTop - viewTop <= windowHeight / 2) && (sectionTop + sectionHeight - viewTop >= windowHeight / 2)) {
+                navigationMatch.addClass("active-section");
             } else {
-                navigationMatch.removeClass('active-section');
+                navigationMatch.removeClass("active-section");
             }
         });
     }
