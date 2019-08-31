@@ -330,32 +330,8 @@
             </section>
 
             <section id="news" class="content-section">
-                <div class="section-heading">
-                </div>
-
                 <div class="swiper-container">
                     <div class="swiper-wrapper">
-                        <div class="swiper-slide">
-                            <div class="row">
-                                <div class="col-md-12">
-                                    <div class="section-heading">
-                                        <h1><em>BioSim</em> successfully end with <em>AntSim</em>!</h1>
-                                        <p>Oct 2017</p>
-                                    </div>
-                                    <div class="text-content">
-                                        <p>In eget ipsum sed lorem vehicula luctus. Curabitur non dolor rhoncus, hendrerit justo sit amet, vestibulum turpis. Pellentesque id auctor tellus, vel ultricies augue. Duis condimentum aliquet blandit. Fusce rhoncus et eros ut pharetra. Phasellus convallis ultricies ligula ac gravida.</p>
-                                    </div>
-                                    <div class="accent-button button">
-                                        <a class="button-next-news">More News</a>
-                                    </div>
-                                </div>
-                                <div class="col-md-12">
-                                    <video controls class="box-video news-videos">
-                                        <source src="videos/antsim.mp4" type="video/mp4">
-                                    </video>
-                                </div>
-                            </div>
-                        </div>
                         <div class="swiper-slide">
                             <div class="row">
                                 <div class="col-md-12">
@@ -366,12 +342,28 @@
                                     <div class="text-content">
                                         <p>Curiosity and Wonder: Anna Keune speaks at the 2019 School of Education Graduate Ceremony!</p>
                                     </div>
-                                    <div class="accent-button button">
-                                        <a>More News</a>
-                                    </div>
+                                    <button class="my-button" v-on:click="nextNews">More News</button>
                                 </div>
                                 <div class="col-md-12">
                                     <img src="img/news_ak_gradspeech19.png" class="box-video"/>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="section-heading">
+                                        <h1><em>BioSim</em> successfully end with <em>AntSim</em>!</h1>
+                                        <p>Oct 2017</p>
+                                    </div>
+                                    <div class="text-content">
+                                        <p>In eget ipsum sed lorem vehicula luctus. Curabitur non dolor rhoncus, hendrerit justo sit amet, vestibulum turpis. Pellentesque id auctor tellus, vel ultricies augue. Duis condimentum aliquet blandit. Fusce rhoncus et eros ut pharetra. Phasellus convallis ultricies ligula ac gravida.</p>
+                                    </div>
+                                </div>
+                                <div class="col-md-12">
+                                    <video controls class="box-video news-videos">
+                                        <source src="videos/antsim.mp4" type="video/mp4">
+                                    </video>
                                 </div>
                             </div>
                         </div>
@@ -566,51 +558,9 @@
                 </div>
             </section>
             <section class="footer">
-                <p>Copyright &copy; 2019 Creativity Labs
-
-                    . Design: Shenshen Han</p>
+                <p>Copyright &copy; 2019 Creativity Labs . Design: Shenshen Han</p>
             </section>
         </div>
         <script src="js/app.js"></script>
-        <script>
-// Hide Header on on scroll down
-var didScroll;
-var lastScrollTop = 0;
-var delta = 5;
-var navbarHeight = $('header').outerHeight();
-
-$(window).scroll(function (event) {
-    didScroll = true;
-});
-
-setInterval(function () {
-    if (didScroll) {
-        hasScrolled();
-        didScroll = false;
-    }
-}, 250);
-
-function hasScrolled() {
-    var st = $(this).scrollTop();
-
-    // Make sure they scroll more than delta
-    if (Math.abs(lastScrollTop - st) <= delta)
-        return;
-
-    // If they scrolled down and are past the navbar, add class .nav-up.
-    // This is necessary so you never see what is "behind" the navbar.
-    if (st > lastScrollTop && st > navbarHeight) {
-        // Scroll Down
-        $('header').removeClass('nav-down').addClass('nav-up');
-    } else {
-        // Scroll Up
-        if (st + $(window).height() < $(document).height()) {
-            $('header').removeClass('nav-up').addClass('nav-down');
-        }
-    }
-
-    lastScrollTop = st;
-}
-        </script>
     </body>
 </html>

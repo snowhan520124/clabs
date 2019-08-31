@@ -18,23 +18,20 @@ jQuery(document).ready(function ($) {
         nextArrow: '<button class="NextArrow"></button>'
     });
 
-    newsSwiper = new Swiper(".swiper-container", {
-        spaceBetween: 150,
-        pagination: {
-            el: ".swiper-pagination",
-            dynamicBullets: true
-        },
-        preventClicksPropagation: false,
-        preventClicks: false
-    });
+    setTimeout(function () {
+        newsSwiper = new Swiper(".swiper-container", {
+            spaceBetween: 150,
+            pagination: {
+                el: ".swiper-pagination",
+                dynamicBullets: true
+            },
+            preventClicksPropagation: false,
+            preventClicks: false,
+            noSwiping: true
+        });
+        console.log("news ready!");
+    }, 1500);
 
-    $(".button-next-news").click(function () {
-        newsSwiper.slideNext();
-        var videos = document.getElementsByClassName("news-videos");
-        for (var i = 0; i < videos.length; i++) {
-            videos[i].pause();
-        }
-    });
 
     $('.tabgroup > div').hide();
     $('.tabgroup > div:first-of-type').show();
@@ -61,13 +58,12 @@ jQuery(document).ready(function ($) {
     });
 
     //update navigation on scroll...
-    $(window).on('scroll', function () {
+    $(window).on("scroll", function () {
         updateNavigation();
     });
     //...and when the page starts
     updateNavigation();
 
-    /////FUNCTIONS
     function updateNavigation() {
         contentSection.each(function () {
             var sectionName = $(this).attr('id');
@@ -76,6 +72,7 @@ jQuery(document).ready(function ($) {
                     ($(this).offset().top + $(this).height() - $(window).height() / 2 > $(window).scrollTop()))
             {
                 navigationMatch.addClass('active-section');
+                console.log("sectionName " + sectionName);
             } else {
                 navigationMatch.removeClass('active-section');
             }
@@ -124,6 +121,16 @@ $.getJSON({
                     Vue.set(self.showOneProject, index, true);
                 }
                 console.log("show " + index);
+            },
+            nextNews() {
+                if (!newsSwiper) {
+                    return;
+                }
+                newsSwiper.slideNext();
+                var videos = document.getElementsByClassName("news-videos");
+                for (var i = 0; i < videos.length; i++) {
+                    videos[i].pause();
+                }
             }
         }
     });

@@ -97,6 +97,26 @@ p {
     color: #45489a;
 }
 
+.my-button {
+    font-size: 13px;
+    font-weight: 600;
+    color: #fff;
+    text-transform: capitalize;
+    background-color: #45489a;
+    display: inline-block;
+    height: 44px;
+    line-height: 44px;
+    padding: 0px 25px;
+    letter-spacing: 0.25px;
+    text-decoration: none;
+    transition: all 0.3s;
+}
+
+.my-button:hover {
+    background-color: #fff;
+    color: #45489a;
+}
+
 header {
     position: fixed;
     top: 0;
@@ -540,7 +560,8 @@ header {
 }
 
 .box-video{
-    height: 400px;
+    max-height: 400px;
+    max-width: 80%;
     position: relative;
     margin-top: 30px;
 }
