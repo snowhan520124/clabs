@@ -1,6 +1,12 @@
 var newsSwiper;
 var app;
 
+function smoothScroll(target) {
+    $("body,html").animate({
+        scrollTop: target.offset().top
+    }, 800);
+}
+
 jQuery(document).ready(function ($) {
     "use strict";
 
@@ -26,7 +32,7 @@ jQuery(document).ready(function ($) {
     navigation.on('click', 'a', function (event) {
         event.preventDefault(); //prevents previous event
         smoothScroll($(this.hash));
-        console.log($(this.hash));
+        console.log(this.hash);
     });
 
     //update navigation on scroll...
@@ -49,11 +55,6 @@ jQuery(document).ready(function ($) {
                 navigationMatch.removeClass('active-section');
             }
         });
-    }
-    function smoothScroll(target) {
-        $('body,html').animate({
-            scrollTop: target.offset().top
-        }, 800);
     }
 
     initVue();
@@ -95,6 +96,9 @@ function initVue() {
                             Vue.set(array, index, false);
                         }
                     });
+                    if (showOne) {
+                        smoothScroll($("#research"));
+                    }
                 },
                 nextNews() {
                     if (!newsSwiper) {
