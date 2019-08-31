@@ -1,5 +1,6 @@
 var newsSwiper;
 var app;
+var scrollTimer;
 
 function smoothScroll(target) {
     $("body,html").animate({
@@ -25,24 +26,27 @@ jQuery(document).ready(function ($) {
         nextArrow: '<button class="NextArrow"></button>'
     });
 
-    var contentSection = $('.content-section, .main-banner');
-    var navigation = $('nav');
+    var contentSection = $(".content-section");
+    var navigation = $("nav");
 
-    //when a nav link is clicked, smooth scroll to the section
-    navigation.on('click', 'a', function (event) {
-        event.preventDefault(); //prevents previous event
+    navigation.on("click", "a", function (event) {
+        event.preventDefault();
         smoothScroll($(this.hash));
-        console.log(this.hash);
+        console.log("click " + this.hash);
     });
 
-    //update navigation on scroll...
     $(window).on("scroll", function () {
-        updateNavigation();
+        if (scrollTimer) {
+            clearTimeout(scrollTimer);
+        }
+        scrollTimer = setTimeout(function () {
+            updateNavigation();
+        }, 100);
     });
-    //...and when the page starts
     updateNavigation();
 
     function updateNavigation() {
+        console.log(".");
         contentSection.each(function () {
             var sectionName = $(this).attr('id');
             var navigationMatch = $('nav a[href="#' + sectionName + '"]');
@@ -50,7 +54,7 @@ jQuery(document).ready(function ($) {
                     ($(this).offset().top + $(this).height() - $(window).height() / 2 > $(window).scrollTop()))
             {
                 navigationMatch.addClass('active-section');
-                //console.log("sectionName " + sectionName);
+                console.log("arrive " + sectionName);
             } else {
                 navigationMatch.removeClass('active-section');
             }
