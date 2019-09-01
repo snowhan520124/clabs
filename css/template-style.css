@@ -687,6 +687,24 @@ header {
     margin-top: 25px;
 }
 
+.project-details-sub-title {
+    display: inline !important;
+    line-height: 28px;
+    font-style: normal;
+    font-weight: 500;
+    color: #45489a;
+}
+
+.project-details-sub-title em{
+    font-weight: 400;
+    color: #45489a;
+    font-size: 16px;
+}
+
+.project-details-img {
+    width: 300px;
+}
+
 /* Team Section Style */
 
 #team {

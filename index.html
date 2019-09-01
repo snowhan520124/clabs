@@ -190,7 +190,7 @@
                                             <p>This collaborative project, titled "Re-Crafting Mathematics Education: Designing Tangible Manipulatives Rooted in Traditional Female Crafts," is based on our prior work studying design, mathematics, and traditional female crafts, particularly when integrated with electronics in what we call "e-textiles."...</p>
 
                                             <div class="accent-button button">
-                                                <a href="#contact">Continue Reading</a>
+                                                <button class="my-button" v-on:click="readProjectDetials(0)">Continue Reading</button>
                                             </div>
                                         </div>
                                     </div>
@@ -321,6 +321,39 @@
                                 </li>
                             </ul>
                         </div>
+                        <ul class="project-details" v-if="showProjectDetails[0]">
+                            <li>
+                                <div class="item">
+                                    <img src="img/project_icon_rcm.png" alt="">
+                                    <div class="text-content">
+                                        <h4>Re-Crafting Mathematics Education</h4>
+                                        <span><a href="https://sites.uci.edu/rcmath/" target="_blank">sites.uci.edu/rcmath</a></span>
+                                        <br/><span class="project-details-sub-title"><em>Principal Investigator&nbsp;&nbsp;&nbsp;</em>Dr. Kylie Peppler</span>
+                                        <br/><span class="project-details-sub-title"><em>Co-Pi&nbsp;&nbsp;&nbsp;</em>Dr. Melissa Gresalfi (Vanderbilt)</span>
+                                        <br/><span class="project-details-sub-title"><em>Project Lead&nbsp;&nbsp;&nbsp;</em>Sophia Bender</span>
+                                        <br/><span class="project-details-sub-title"><em>IU Embedded ethnographers&nbsp;&nbsp;&nbsp;</em>Sophia Bender, Anna Keune, Kate Samson, Mishael Sedas, Pooja Saxena, Naomi Thompson, & Suraj Uttamchandani</span>
+                                        <br/><span class="project-details-sub-title"><em>Associated Blog&nbsp;&nbsp;&nbsp;</em>Re-Crafting Education</span>
+                                        <br/><br/>
+                                        <p>This collaborative project, titled "Re-Crafting Mathematics Education: Designing Tangible Manipulatives Rooted in Traditional Female Crafts," is based on our prior work studying design, mathematics, and traditional female crafts, particularly when integrated with electronics in what we call "e-textiles." As part of this new project, we plan to extend this earlier work to better understand how traditional female crafting practices can make far-reaching improvements in a range of learning outcomes in science, technology, engineering, and mathematics (STEM) education. These types of investigations will help reveal key issues underlying the underrepresentation of women and girls in lifelong STEM learning.</p>
+                                        <p>We are conducting a series of ethnographies of female crafting circles to better theorize the connections particularly between mathematics and traditional women’s crafts. In fact, we are coming to understand craft as a lived mathematical practice -- that craft and mathematics are closely intertwined. Following our initial ethnographic field work, we're planning to develop and test a set of new hands-on classroom manipulatives for schools and after-school programs (targeted at youth in grades 5-9).</p>   
+                                        <p>A collaborative effort between the Creativity Labs at Indiana University and Peabody College of Vanderbilt University.</p>
+                                        <p>Support for this project comes from the National Science Foundation.</p>
+                                    </div>
+                                    <img src="img/project_details_rcm.jpg" alt="" class="project-details-img">
+                                    <span class="project-details-sub-title"><em>Representative Publications</em></span>
+                                    <p>
+                                        <strong>Bender, S. (2015, June 11).</strong>
+                                        <a href="https://www.youtube.com/watch?v=28Sx0Now7SM" target="_blank">A cosplaying learning scientist learns how to make learning more fun!.</a>
+                                        <span>Ignite Talk presented at the Digital Media Learning Conference (DML2015): Equity by Design. Los Angeles, CA.</span>
+                                    </p>
+                                    <p>
+                                        <strong>Bender, S., and Samson, K. (2015, September 26-27).</strong>
+                                        <a href="http://creativitylabs.com/pubs/2015_Bender-Samson_Re-Crafting_Math_FabLearn.pdf" target="_blank">Re-crafting mathematics: Early lessons learned at the intersection of textile crafts and math.</a>
+                                        <span>Paper presented at the fifth annual FabLearn Conference: Equity and Diversity in Making. Palo Alto, CA: Stanford University.</span>
+                                    </p>
+                                </div>
+                            </li>
+                        </ul>
                     </section>
                 </div>
             </section>
@@ -515,7 +548,7 @@
                 </div>
                 <div id="contact-content">
                     <div class="section-heading">
-                        <h1>Contact<br><em>Sentra</em></h1>
+                        <h1>Contact<br><em>Us</em></h1>
                         <p>Curabitur hendrerit mauris mollis ipsum vulputate rutrum.
                             <br>Phasellus luctus odio eget dui imperdiet.</p>
 
