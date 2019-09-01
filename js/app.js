@@ -89,19 +89,24 @@ function initVue() {
             data: {
                 showOneProject: [false, false, false, false],
                 researchTabs: [true, false, false, false],
+                showProjectDetails: [false],
                 publications: res.publications
             },
             methods: {
-                clickResearchTab(i, showOne) {
-                    var self = this;
-                    Vue.set(self.showOneProject, i, showOne);
-                    self.researchTabs.forEach(function (item, index, array) {
-                        if (index === i) {
-                            Vue.set(array, index, true);
+                clickResearchTab(id, showOne) {
+                    this.cleanProjectDetials();
+                    Vue.set(this.showProjectDetails, 0, false);
+
+                    for (var i = 0; i < this.researchTabs.length; i++) {
+                        this.showOneProject[i] = false;
+                        if (id === i) {
+                            Vue.set(this.researchTabs, i, true);
                         } else {
-                            Vue.set(array, index, false);
+                            Vue.set(this.researchTabs, i, false);
                         }
-                    });
+                    }
+                    Vue.set(this.showOneProject, id, showOne);
+
                     if (showOne) {
                         smoothScroll($("#research"));
                     }
@@ -115,6 +120,31 @@ function initVue() {
                     for (var i = 0; i < videos.length; i++) {
                         videos[i].pause();
                     }
+                },
+                cleanProjectDetials() {
+                    for (var i = 0; i < this.showProjectDetails.length; i++) {
+                        this.showProjectDetails[i] = false;
+                    }
+                },
+                cleanShowOneProject() {
+                    for (var i = 0; i < this.showOneProject.length; i++) {
+                        this.showOneProject[i] = false;
+                    }
+                },
+                cleanResearchTabs() {
+                    for (var i = 0; i < this.researchTabs.length; i++) {
+                        this.researchTabs[i] = false;
+                    }
+                },
+                readProjectDetials(id) {
+                    this.cleanProjectDetials();
+                    Vue.set(this.showProjectDetails, id, true);
+
+                    this.cleanShowOneProject();
+                    Vue.set(this.showOneProject, 0, false);
+
+                    this.cleanResearchTabs();
+                    Vue.set(this.researchTabs, 0, false);
                 }
             }
         });
