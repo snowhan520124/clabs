@@ -152,6 +152,25 @@
                     "url": "https://www.linkedin.com/in/joey-huang-b7b2035a/"
                 }
             ]
+        },
+        {
+            "name": "Naomi Thompson",
+            "title": "Graduate Research Assistant",
+            "intro": "Coming from psychology, education, and arts, Naomi is interested in intersections of arts, making, and broadening STEM participation. She is currently working on systems thinking through play in BioSim, and is involved in the ReCrafting Math project.",
+            "social": [
+                {
+                    "type": "email",
+                    "url": "mailto:naothomp@indiana.edu"
+                },
+                {
+                    "type": "twitter",
+                    "url": "https://twitter.com/_naomithompson_"
+                },
+                {
+                    "type": "web",
+                    "url": "http://naomi-thompson.com/"
+                }
+            ]
         }
     ]
 }
