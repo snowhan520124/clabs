@@ -466,68 +466,24 @@
                     <p>The Creativity Labs team includes learning scientists,<br>educators, artists, designers, and programmers</p>
                 </div>
                 <div class="section-content">
-                    <div class="row">
-                        <div class="col-md-4 col-sm-4">
+                    <div class="row" v-for="row in teamRows">
+                        <div class="col-md-4 col-sm-4" v-for="person in row">
                             <div class="team-member">
                                 <div class="team-img">
-                                    <img src="img/team_kp.png" alt="team member" class="img-responsive">
+                                    <img v-bind:src="'img/' + person.photo" alt="team member" class="img-responsive">
                                 </div>
                                 <div class="team-hover">
                                     <div class="desk">
-                                        <p class="team-intro-text">Kylie is an Associate Professor in Informatics and Education at University of California, Irvine and Director of the Creativity Labs. An artist by training, she engages in research that focuses on the intersection of arts, media, new technologies, and informal learning.</p>
+                                        <p class="team-intro-text">{{person.intro}}</p>
                                     </div>
                                     <div class="s-link">
-                                        <a href="#"><i class="fa fa-facebook"></i></a>
-                                        <a href="#"><i class="fa fa-twitter"></i></a>
-                                        <a href="#"><i class="fa fa-google-plus"></i></a>
+                                        <a v-bind:href="s.url" target="_blank" v-for="s in person.social"><i v-bind:class="['fa', s.class]"></i></a>
                                     </div>
                                 </div>
                             </div>
                             <div class="team-title">
-                                <h5>Dr. Kylie A. Peppler</h5>
-                                <span>Lab Director</span>
-                            </div>
-                        </div>
-                        <div class="col-md-4 col-sm-4">
-                            <div class="team-member">
-                                <div class="team-img">
-                                    <img src="img/test.png" alt="team member" class="img-responsive">
-                                </div>
-                                <div class="team-hover">
-                                    <div class="desk">
-                                        <p class="team-intro-text">Janis is a 20-year veteran schoolteacher, an education writer, and a curriculum designer. Her interests lie in designing and facilitating the creation of innovative online, digital, and game-based learning experiences.</p>
-                                    </div>
-                                    <div class="s-link">
-                                        <a href="#"><i class="fa fa-facebook"></i></a>
-                                        <a href="#"><i class="fa fa-twitter"></i></a>
-                                        <a href="#"><i class="fa fa-google-plus"></i></a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="team-title">
-                                <h5>Janis Watson</h5>
-                                <span>Curriculum Specialist</span>
-                            </div>
-                        </div>
-                        <div class="col-md-4 col-sm-4">
-                            <div class="team-member">
-                                <div class="team-img">
-                                    <img src="img/team_sh.png" alt="team member" class="img-responsive">
-                                </div>
-                                <div class="team-hover">
-                                    <div class="desk">
-                                        <p class="team-intro-text">Shenshen is currently working as system/software specialist at Creativity Labs. His recent interest mainly lies on exploring the sense of the next generation Internet Computing. He is an enthusiast of computer networks and pervasive computing.</p>
-                                    </div>
-                                    <div class="s-link">
-                                        <a href="#"><i class="fa fa-facebook"></i></a>
-                                        <a href="#"><i class="fa fa-twitter"></i></a>
-                                        <a href="#"><i class="fa fa-google-plus"></i></a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="team-title">
-                                <h5>Shenshen Han</h5>
-                                <span>System Developer</span>
+                                <h5>{{person.name}}</h5>
+                                <span>{{person.title}}</span>
                             </div>
                         </div>
                     </div>

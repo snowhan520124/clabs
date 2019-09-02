@@ -53,5 +53,105 @@
             ]
         }
     ],
-    "team": []
+    "social_icons": ["facebook", "twitter", "email", "web", "linkedin"],
+    "team": [
+        {
+            "name": "Dr. Kylie A. Peppler",
+            "photo": "team_kp.png",
+            "title": "Lab Director",
+            "intro": "Kylie is an Associate Professor in Informatics and Education at University of California, Irvine and Director of the Creativity Labs. An artist by training, she engages in research that focuses on the intersection of arts, media, new technologies, and informal learning.",
+            "social": [
+                {
+                    "type": "email",
+                    "url": "mailto:kpeppler@gmail.com"
+                },
+                {
+                    "type": "twitter",
+                    "url": "http://twitter.com/@DrPeppler"
+                },
+                {
+                    "type": "linkedin",
+                    "url": "https://www.linkedin.com/in/kylie-peppler-a284286"
+                },
+                {
+                    "type": "web",
+                    "url": "http://kpeppler.com/"
+                }
+            ]
+        },
+        {
+            "name": "Janis Watson",
+            "photo": "test.png",
+            "title": "Curriculum Specialist",
+            "intro": "Janis is a 20-year veteran schoolteacher, an education writer, and a curriculum designer. Her interests lie in designing and facilitating the creation of innovative online, digital, and game-based learning experiences.",
+            "social": [
+                {
+                    "type": "email",
+                    "url": "mailto:janislwatson@gmail.com"
+                },
+                {
+                    "type": "linkedin",
+                    "url": "https://www.linkedin.com/in/janiswatson"
+                }
+            ]
+        },
+        {
+            "name": "Shenshen Han",
+            "photo": "team_sh.png",
+            "title": "System Developer",
+            "intro": "Shenshen is currently working as system/software specialist at Creativity Labs. His recent interest mainly lies on exploring the sense of the next generation Internet Computing. He is an enthusiast of computer networks and pervasive computing.",
+            "social": [
+                {
+                    "type": "email",
+                    "url": "mailto:hanaldo520124@gmail.com"
+                },
+                {
+                    "type": "web",
+                    "url": "https://hanaldo.github.io/me/"
+                },
+                {
+                    "type": "linkedin",
+                    "url": "https://www.linkedin.com/in/shenshen-han/"
+                }
+            ]
+        },
+        {
+            "name": "Anna Keune",
+            "title": "Graduate Research Assistant",
+            "intro": "Anna is a doctoral candidate in the Learning Sciences program at Indiana University. As a new media artist and designer, she leverages her international experiences across four continents to engage in research that spans across art, technology design, and materiality of learning.",
+            "social": [
+                {
+                    "type": "email",
+                    "url": "mailto:anna.keune@aalto.fi"
+                },
+                {
+                    "type": "twitter",
+                    "url": "https://twitter.com/akeune"
+                },
+                {
+                    "type": "web",
+                    "url": "http://annakeune.com/"
+                }
+            ]
+        },
+        {
+            "name": "Joey Huang",
+            "title": "Graduate Research Assistant",
+            "intro": "Joey is a Ph.D. candidate in Learning Sciences. Coming from educational psychology and computing, her research focuses on computational thinking, collaboration, and STEM learning, hoping to create more interesting and inspiring learning environments to promote equity and collaboration.",
+            "social": [
+                {
+                    "type": "email",
+                    "url": "mailto:huang220@indiana.edu"
+                },
+                {
+                    "type": "twitter",
+                    "url": "http://twitter.com/@JoeyYL"
+                },
+                {
+                    "type": "linkedin",
+                    "url": "https://www.linkedin.com/in/joey-huang-b7b2035a/"
+                }
+            ]
+        }
+    ]
 }
