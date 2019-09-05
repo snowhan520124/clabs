@@ -51,6 +51,13 @@
         {
             "year": 2017,
             "list": [
+                {
+                    "title": "Designing BioSim: Playfully encouraging systems thinking in young children",
+                    "authors": ["Thompson, N.", "Peppler, K.", "Danish, J."],
+                    "otherText": "In Zheng, R. & Gardner, M. (Eds.), Handbook of research on serious games for educational applications, Ch.7 (pp. 149-167). Hershey, PA: IGI Global.",
+                    "cat": "idl",
+                    "file": "2017_Peppler_DesigningBioSimSystemsThinkingYoungChildren.pdf"
+                }
             ]
         }
     ],
