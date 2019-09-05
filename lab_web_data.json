@@ -16,6 +16,7 @@
             "id": "scm"
         }
     ],
+    "projectIds": ["rcm", "biosim", "lrng", "scratch"],
     "publications": [
         {
             "year": 2019,

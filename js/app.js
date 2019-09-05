@@ -32,7 +32,6 @@ jQuery(document).ready(function ($) {
     navigation.on("click", "a", function (event) {
         event.preventDefault();
         smoothScroll($(this.hash));
-        console.log("click " + this.hash);
     });
 
     $(window).on("scroll", function () {
@@ -123,14 +122,16 @@ function initVue() {
             data: {
                 showOneProject: [false, false, false, false],
                 researchTabs: [true, false, false, false],
-                showProjectDetails: [false],
+                showProjectDetails: null,
                 publications: res.publications,
                 teamRows: teamRows
             },
+            created() {
+                this.showProjectDetails = new Set();
+            },
             methods: {
                 clickResearchTab(id, showOne) {
-                    this.cleanProjectDetials();
-                    Vue.set(this.showProjectDetails, 0, false);
+                    this.showProjectDetails.clear();
 
                     for (var i = 0; i < this.researchTabs.length; i++) {
                         this.showOneProject[i] = false;
@@ -156,11 +157,6 @@ function initVue() {
                         videos[i].pause();
                     }
                 },
-                cleanProjectDetials() {
-                    for (var i = 0; i < this.showProjectDetails.length; i++) {
-                        this.showProjectDetails[i] = false;
-                    }
-                },
                 cleanShowOneProject() {
                     for (var i = 0; i < this.showOneProject.length; i++) {
                         this.showOneProject[i] = false;
@@ -172,8 +168,8 @@ function initVue() {
                     }
                 },
                 readProjectDetials(id) {
-                    this.cleanProjectDetials();
-                    Vue.set(this.showProjectDetails, id, true);
+                    this.showProjectDetails.clear();
+                    this.showProjectDetails.add(id);
 
                     this.cleanShowOneProject();
                     Vue.set(this.showOneProject, 0, false);
@@ -209,6 +205,10 @@ function initJsControls() {
 
     $("#goTopProject2").click(function () {
         app.clickResearchTab(3, true);
+    });
+
+    $("#goTopProject3").click(function () {
+        app.clickResearchTab(1, true);
     });
 
     $("#link_top").on("click", function (e) {
