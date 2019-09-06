@@ -408,6 +408,9 @@
                                         <a>Designing BioSim: Playfully encouraging systems thinking in young children.</a>
                                         <span>In Zheng, R. & Gardner, M. (Eds.), Handbook of research on serious games for educational applications, Ch.7 (pp. 149-167). Hershey, PA: IGI Global.</span>
                                     </p>
+                                    <p>
+                                    <my-simple-pub-item v-bind:show-year="2017" v-bind:paper="getPaper(2017, 'Designing BioSim: Playfully encouraging systems thinking in young children')"></my-simple-pub-item>
+                                    </p>
                                 </div>
                             </li>
                         </ul>
@@ -469,9 +472,7 @@
                         <div class="pubs-paper-year">{{yearGroup.year}}</div>
                         <ul class="pubs-paper-list">
                             <li v-for="paper in yearGroup.list">
-                                <strong v-for="author in paper.authors">{{author}},</strong>
-                                <a v-bind:href="paper.file" target="_blank">"{{paper.title}}"</a><span>.</span>
-                                <span>{{paper.otherText}}</span>
+                            <my-simple-pub-item v-bind:paper="paper"></my-simple-pub-item>
                             </li>
                         </ul>
                     </div>

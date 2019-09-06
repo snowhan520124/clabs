@@ -117,6 +117,11 @@ function initVue() {
             teamRows[teamRows.length - 1].push(person);
         });
 
+        Vue.component("my-simple-pub-item", {
+            template: "<div><span v-if='showYear'>({{showYear}})&nbsp;</span><strong v-for='author in paper.authors'>{{author}},&nbsp;</strong><a v-bind:href='paper.file' target='_blank'>\"{{paper.title}}\"</a><span>.&nbsp;</span><span>{{paper.otherText}}</span></div>",
+            props: ["paper", "showYear"]
+        });
+
         app = new Vue({
             el: "#app",
             data: {
@@ -176,6 +181,17 @@ function initVue() {
 
                     this.cleanResearchTabs();
                     Vue.set(this.researchTabs, 0, false);
+                },
+                getPaper(year, title) {
+                    for (var i = 0; i < this.publications.length; i++) {
+                        if (this.publications[i].year === year) {
+                            for (var j = 0; j < this.publications[i].list.length; j++) {
+                                if (this.publications[i].list[j].title === title) {
+                                    return this.publications[i].list[j];
+                                }
+                            }
+                        }
+                    }
                 }
             }
         });
