@@ -11,9 +11,18 @@
         {
             "name": "Arts & Creativity",
             "id": "anc"
-        }, {
+        }, 
+        {
             "name": "Scratch & Computational Media",
             "id": "scm"
+        },
+        {
+            "name": "Systems Thinking",
+            "id": "sth"
+        },
+        {
+            "name": "Computer Science Education",
+            "id": "cse"
         }
     ],
     "projectIds": ["rcm", "biosim", "lrng", "scratch"],
@@ -28,12 +37,19 @@
                     "cat": "scm"
                 }, 
                 {
+                    "title": "Child-material computing: Material collaboration in fiber crafts",
+                    "authors": ["Keune, A.", "Peppler, K."],
+                    "otherText": "In K. Lund, E. Lavoué, G. P. Niccolai (Eds.), A wide lens: Combining embodied, enactive, extended, and embedded learning in collaborative settings. 13th International Conference on Computer Supported Collaborative Learning (CSCL), June 2019. Lyon, France: International Society of the Learning Sciences.",
+                    "cat": "anc"
+                },
+                {
                     "title": "Utilizing the consensual assessment technique to compare creativity in drama spaces",
                     "authors": ["Phonethibsavads, A.", "Peppler, K.", "Bender, S."],
                     "otherText": "Creativity: Theories-Research-Applications, Vol. 6, Issue 1, 2019.",
                     "cat": "anc",
                     "file": "2019_Phonethibsavads_Peppler_Bender_Utilizing_the_consensual_assessment_technique.pdf"
                 }
+
             ]
         },
         {
@@ -55,8 +71,20 @@
                     "title": "Designing BioSim: Playfully encouraging systems thinking in young children",
                     "authors": ["Thompson, N.", "Peppler, K.", "Danish, J."],
                     "otherText": "In Zheng, R. & Gardner, M. (Eds.), Handbook of research on serious games for educational applications, Ch.7 (pp. 149-167). Hershey, PA: IGI Global.",
-                    "cat": "idl",
+                    "cat": "sth",
                     "file": "2017_Peppler_DesigningBioSimSystemsThinkingYoungChildren.pdf"
+                }
+            ]
+        },
+        {
+            "year": 2012,
+            "list": [
+                {
+                    "title": "Uncovering Literacies, Disrupting Stereotypes: Examining the (Dis)Abilities of a Child Learning to Computer Program and Read",
+                    "authors": ["Peppler, K.", "Warschauer, M."],
+                    "otherText": "International Journal of Learning and Media, 3(3), pp. 15-41. doi:10.1162/IJLM_a_00073",
+                    "cat": "cse",
+                    "file": "2012_Peppler_Uncovering_Literacies.pdf"
                 }
             ]
         }
