@@ -67,9 +67,9 @@ jQuery(document).ready(function ($) {
 
 function initVue() {
     $.getJSON({
-        url: "https://raw.githubusercontent.com/hanaldo/clabs/master/lab_web_data.json"
+        url: "https://hanaldo.github.io/clabs/lab_web_data.json"
     }).done(function (res) {
-        var fileServerPath = "http://creativitylabs.com/pubs/";
+        var fileServerPath = "https://hanaldo.github.io/clabs/pubs/";
 
         res.publications.forEach(function (yearGroup, index, array) {
             if (!yearGroup.list.length) {
