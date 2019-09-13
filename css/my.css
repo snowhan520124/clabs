@@ -10,3 +10,7 @@
     line-height: 15px !important;
     font-size: 10px !important;
 }
+
+.partner-imgs img {
+    width: 100%;
+}
