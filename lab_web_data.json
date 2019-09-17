@@ -177,7 +177,7 @@
             "social": [
                 {
                     "type": "email",
-                    "url": "mailto:huang220@indiana.edu"
+                    "url": "mailto:joey.h@uci.edu"
                 },
                 {
                     "type": "twitter",
@@ -186,6 +186,10 @@
                 {
                     "type": "linkedin",
                     "url": "https://www.linkedin.com/in/joey-huang-b7b2035a/"
+                },
+                {
+                    "type": "web",
+                    "url": "http://chujenhuang.com/"
                 }
             ]
         },
