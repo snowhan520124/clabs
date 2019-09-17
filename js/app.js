@@ -134,7 +134,13 @@ function initVue() {
                 researchTabs: [true, false, false, false],
                 showProjectDetails: null,
                 publications: res.publications,
-                teamRows: teamRows
+                teamRows: teamRows,
+                messageSent: false,
+                contactButton: "Send Message Now",
+                contactName: "",
+                contactEmail: "",
+                contactSubject: "",
+                contactMessage: ""
             },
             created() {
                 this.showProjectDetails = new Set();
@@ -205,6 +211,25 @@ function initVue() {
                             return;
                         }
                     }
+                },
+                sendMessage() {
+                    if (!$("#contact-form")[0].checkValidity()) {
+                        //go validate again to trigger native html error message
+                        $("#form-submit").click();
+                        return;
+                    }
+                    var message = "from: " + this.contactName + ", " + this.contactEmail + "\n";
+                    message += this.contactSubject + "\n";
+                    message += this.contactMessage;
+
+                    $.ajax("https://hooks.slack.com/services/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", {
+                        method: "POST",
+                        dataType: "json",
+                        processData: false,
+                        data: JSON.stringify({text: message})
+                    });
+                    this.messageSent = true;
+                    this.contactButton = "Message Sent!";
                 }
             }
         });
