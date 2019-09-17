@@ -481,8 +481,8 @@
                 </div>
                 <div class="pubs-section-content">
                     <div v-for="yearGroup in publications">
-                        <div class="pubs-paper-year">{{yearGroup.year}}</div>
-                        <ul class="pubs-paper-list">
+                        <div class="pubs-paper-year my-hover" v-on:click="showPubYear(yearGroup.year)">{{yearGroup.year}}&nbsp;<i class="fa fa-plus-square" v-if="!yearGroup.show"></i><i class="fa fa-minus-square" v-if="yearGroup.show"></i></div>
+                        <ul class="pubs-paper-list" v-if="yearGroup.show">
                             <li v-for="paper in yearGroup.list">
                             <my-simple-pub-item v-bind:paper="paper"></my-simple-pub-item>
                             </li>

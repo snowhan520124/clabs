@@ -70,11 +70,16 @@ function initVue() {
         url: "https://hanaldo.github.io/clabs/lab_web_data.json"
     }).done(function (res) {
         var fileServerPath = "https://hanaldo.github.io/clabs/pubs/";
+        var nowYear = new Date().getFullYear();
 
         res.publications.forEach(function (yearGroup, index, array) {
             if (!yearGroup.list.length) {
                 array.splice(index, 1);
                 return;
+            }
+            yearGroup.show = false;
+            if (nowYear === yearGroup.year) {
+                yearGroup.show = true;
             }
             yearGroup.list.forEach(function (pub) {
                 if (pub.file) {
@@ -190,6 +195,14 @@ function initVue() {
                                     return this.publications[i].list[j];
                                 }
                             }
+                        }
+                    }
+                },
+                showPubYear(year) {
+                    for (var i = 0; i < this.publications.length; i++) {
+                        if (this.publications[i].year === year) {
+                            this.publications[i].show = !this.publications[i].show;
+                            return;
                         }
                     }
                 }
